@@ -1,0 +1,648 @@
+✅ Admin setup completed
+✅ Unified auth setup completed
+✅ Hero slides routes setup completed
+🔧 Setting up upload routes...
+✅ Upload routes and static serving setup completed
+🔧 Setting up upload routes...
+✅ API routes registered successfully
+🔧 Initializing database...
+📋 Creating database schema...
+✅ Vite development setup completed
+2:02:37 PM [express] ✅ Server serving on port 8080
+🌍 Application available at http://localhost:8080
+✅ Database schema created successfully
+🔄 Checking database setup...
+✅ Ensured packages table has slug column
+✅ Ensured countries table exists
+✅ Ensured nationalities table exists
+✅ Ensured visas table exists
+✅ Ensured nationality_visa_requirements table exists
+✅ All necessary visa tables are created
+✅ Database setup complete!
+🔐 Setting up admin users...
+✅ Main admin user already exists
+✅ Test admin user already exists
+🏷️ Seeding package categories...
+🏷️ Seeding package categories...
+✅ Package categories already seeded
+✅ Package categories seeding complete
+✅ Package categories already seeded
+🌱 Seeding data...
+✅ Data already seeded
+✅ Database initialization complete!
+2:03:08 PM [express] GET /api/hero-slides/active 200 in 3ms :: [{"id":1,"title":"Welcome to Sahara Journeys","subtitle":"Discover the Magic of the Middle East","descrip…
+2:03:08 PM [express] GET /api/cities 200 in 73ms :: [{"id":5,"name":"Abu Dhabi","countryId":2,"description":"The capital of the UAE, known for its cultural landmarks an…
+2:03:08 PM [express] GET /api/tour-categories 200 in 73ms :: []
+2:03:08 PM [express] GET /api/menus/location/footer 404 in 74ms :: {"message":"Menu not found for this location"}
+2:03:08 PM [express] GET /api/translations 200 in 74ms :: [{"id":1,"key":"asasa","enText":"dasdasd","arText":"asdasdasdas","context":"dasda","category":"sdsddsds","crea…
+2:03:08 PM [express] GET /api/translations/settings 200 in 70ms :: {"id":1,"default_language":"en","available_languages":["en","ar"],"rtl_languages":["ar"],"auto_transl…
+2:03:09 PM [express] GET /api/destinations 200 in 363ms :: [{"id":1,"name":"Pyramids,giza","country":"","countryId":1,"cityId":1,"description":"sdsadsadasd","imageUrl":…
+2:03:09 PM [express] GET /api/countries 200 in 369ms :: [{"id":1,"name":"Egypt","code":"EG","description":"A country linking northeast Africa with the Middle East, date…
+Error listing packages: error: column "inclusions" does not exist
+    at /home/runner/workspace/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async <anonymous> (/home/runner/workspace/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.listPackages (/home/runner/workspace/server/storage.ts:518:14)
+    at async <anonymous> (/home/runner/workspace/server/routes.ts:572:24) {
+  length: 111,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '286',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+2:03:09 PM [express] GET /api/packages 200 in 398ms :: []
+Error listing tours: error: column "featured" does not exist
+    at /home/runner/workspace/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async <anonymous> (/home/runner/workspace/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.listTours (/home/runner/workspace/server/storage.ts:879:14)
+    at async <anonymous> (/home/runner/workspace/server/routes.ts:1004:21) {
+  length: 109,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '115',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+2:03:43 PM [express] GET /api/tours 200 in 368ms :: []
+2:04:04 PM [express] POST /api/login 200 in 412ms :: {"id":1,"username":"EETADMIN","role":"admin","displayName":"Admin User","avatarUrl":null}
+Cart GET request - userId: 1 sessionId: undefined
+Error fetching cart: error: column "item_type" does not exist
+    at /home/runner/workspace/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async <anonymous> (/home/runner/workspace/node_modules/src/node-postgres/session.ts:104:19)
+    at async <anonymous> (/home/runner/workspace/server/routes.ts:172:25) {
+  length: 109,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '39',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+2:04:04 PM [express] GET /api/cart 500 in 74ms :: {"message":"Failed to fetch cart items"}
+📍 API Route Hit: GET /
+2:04:08 PM [express] GET /api/admin/dashboard-stats 200 in 10ms
+2:04:08 PM [express] GET /api/user 200 in 1ms :: {"id":1,"username":"EETADMIN","email":"admin@egyptexpress.com","role":"admin"}
+📍 API Route Hit: GET /
+2:04:09 PM [express] GET /api/admin/dashboard-stats 200 in 7ms
+2:04:09 PM [express] GET /api/user 304 in 1ms :: {"id":1,"username":"EETADMIN","email":"admin@egyptexpress.com","role":"admin"}
+2:04:13 PM [express] GET /api/maps-key 200 in 2ms :: {"key":""}
+Error listing hotel facilities: error: column "description" does not exist
+    at /home/runner/workspace/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async <anonymous> (/home/runner/workspace/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.listHotelFacilities (/home/runner/workspace/server/storage.ts:1322:14)
+    at async <anonymous> (/home/runner/workspace/server/index.ts:217:28) {
+  length: 111,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '22',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+2:04:14 PM [express] GET /api/admin/hotel-facilities 200 in 74ms :: []
+Error listing hotel highlights: error: column "description" does not exist
+    at /home/runner/workspace/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async <anonymous> (/home/runner/workspace/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.listHotelHighlights (/home/runner/workspace/server/storage.ts:1403:14)
+    at async <anonymous> (/home/runner/workspace/server/index.ts:227:28) {
+  length: 111,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '22',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3716',
+  routine: 'errorMissingColumn'
+}
+2:04:14 PM [express] GET /api/admin/hotel-highlights 200 in 74ms :: []
+Error listing cleanliness features: error: column "created_by" does not exist
+    at /home/runner/workspace/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async <anonymous> (/home/runner/workspace/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.listCleanlinessFeatures (/home/runner/workspace/server/storage.ts:1482:14)
+    at async <anonymous> (/home/runner/workspace/server/index.ts:237:26) {
+  length: 188,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "cleanliness_features.created_at".',
+  position: '83',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3723',
+  routine: 'errorMissingColumn'
+}
+2:04:14 PM [express] GET /api/admin/cleanliness-features 200 in 73ms :: []
+2:04:15 PM [express] GET /api/user 304 in 1ms :: {"id":1,"username":"EETADMIN","email":"admin@egyptexpress.com","role":"admin"}
+2:04:15 PM [express] GET /api/maps-key 304 in 1ms :: {"key":""}
+2:05:16 PM [express] POST /api/upload/image 200 in 7ms :: {"success":true,"url":"/uploads/image-1752329116573-468826460.png","filename":"image-1752329116573-468826460.p…
+2:05:22 PM [express] POST /api/upload/image 200 in 5805ms :: {"success":true,"url":"/uploads/image-1752329117173-715156683.jpg","filename":"image-1752329117173-71515668…
+🔍 Admin check - Session user: {
+  id: 1,
+  username: 'EETADMIN',
+  role: 'admin',
+  displayName: 'Admin User',
+  avatarUrl: null,
+  email: 'admin@egyptexpress.com'
+}
+🔍 Admin check - Request path: /api/admin/hotels
+✅ Admin check passed for user: EETADMIN (ID: 1)
+Hotel creation request body: {
+  name: 'asdasdasda',
+  description: 'sadasdsa',
+  destinationId: 1,
+  address: 'dasdlasdka;lsa;dslf',
+  cityId: 1,
+  countryId: 1,
+  postalCode: '12121',
+  phone: 'sadasdas',
+  email: 'ahmed4@elmasrimedia.com',
+  website: 'https://sdassad.com',
+  stars: 3,
+  longitude: 2321321,
+  latitude: 2321321,
+  featured: false,
+  status: 'active',
+  checkInTime: '14:00',
+  checkOutTime: '11:00',
+  features: [ { name: 'meal', icon: 'hamburger' } ],
+  parkingAvailable: false,
+  airportTransferAvailable: true,
+  carRentalAvailable: false,
+  shuttleAvailable: false,
+  wifiAvailable: true,
+  petFriendly: false,
+  accessibleFacilities: false,
+  galleryUrls: [ '/uploads/image-1752329117173-715156683.jpg' ],
+  landmarks: [
+    {
+      name: 'Great Pyramid of Giza',
+      description: 'Ancient Egyptian pyramid',
+      distance: '1.2 km',
+      placeId: 'ChIJN8F_47w7WBQRUJGUzM6Fsks'
+    }
+  ],
+  restaurants: [
+    {
+      name: 'asdsadsa',
+      cuisineType: 'asdasdas',
+      breakfastOptions: [Array]
+    }
+  ],
+  faqs: [ { question: 'asdsad', answer: 'asdasd' } ],
+  roomTypes: [
+    {
+      name: 'asdsad',
+      description: '',
+      type: 'Junior Suite',
+      maxOccupancy: 2,
+      maxAdults: 2,
+      maxChildren: 0,
+      maxInfants: 0,
+      price: 2332,
+      size: '2323',
+      bedType: 'Twin Beds',
+      view: 'River View',
+      amenities: [Array],
+      available: true
+    }
+  ],
+  imageUrl: '/uploads/image-1752329116573-468826460.png'
+}
+Raw form data received: {
+  "name": "asdasdasda",
+  "description": "sadasdsa",
+  "destinationId": 1,
+  "address": "dasdlasdka;lsa;dslf",
+  "cityId": 1,
+  "countryId": 1,
+  "postalCode": "12121",
+  "phone": "sadasdas",
+  "email": "ahmed4@elmasrimedia.com",
+  "website": "https://sdassad.com",
+  "stars": 3,
+  "longitude": 2321321,
+  "latitude": 2321321,
+  "featured": false,
+  "status": "active",
+  "checkInTime": "14:00",
+  "checkOutTime": "11:00",
+  "features": [
+    {
+      "name": "meal",
+      "icon": "hamburger"
+    }
+  ],
+  "parkingAvailable": false,
+  "airportTransferAvailable": true,
+  "carRentalAvailable": false,
+  "shuttleAvailable": false,
+  "wifiAvailable": true,
+  "petFriendly": false,
+  "accessibleFacilities": false,
+  "galleryUrls": [
+    "/uploads/image-1752329117173-715156683.jpg"
+  ],
+  "landmarks": [
+    {
+      "name": "Great Pyramid of Giza",
+      "description": "Ancient Egyptian pyramid",
+      "distance": "1.2 km",
+      "placeId": "ChIJN8F_47w7WBQRUJGUzM6Fsks"
+    }
+  ],
+  "restaurants": [
+    {
+      "name": "asdsadsa",
+      "cuisineType": "asdasdas",
+      "breakfastOptions": [
+        "vegetarian",
+        "glutenFree"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "asdsad",
+      "answer": "asdasd"
+    }
+  ],
+  "roomTypes": [
+    {
+      "name": "asdsad",
+      "description": "",
+      "type": "Junior Suite",
+      "maxOccupancy": 2,
+      "maxAdults": 2,
+      "maxChildren": 0,
+      "maxInfants": 0,
+      "price": 2332,
+      "size": "2323",
+      "bedType": "Twin Beds",
+      "view": "River View",
+      "amenities": [
+        "slippers",
+        "desk"
+      ],
+      "available": true
+    }
+  ],
+  "imageUrl": "/uploads/image-1752329116573-468826460.png"
+}
+=== FEATURES EXTRACTION ===
+Raw features from form data: [ { name: 'meal', icon: 'hamburger' } ]
+Features type: object
+Features is array: true
+Features length: 1
+Feature 0: {"name":"meal","icon":"hamburger"}
+Fetched city name: Cairo
+Fetched country name: Egypt
+Current user ID for created_by: 1
+Transformed hotel data: {
+  name: 'asdasdasda',
+  description: 'sadasdsa',
+  shortDescription: undefined,
+  destinationId: 1,
+  countryId: 1,
+  cityId: 1,
+  categoryId: null,
+  address: 'dasdlasdka;lsa;dslf',
+  city: 'Cairo',
+  country: 'Egypt',
+  postalCode: '12121',
+  phone: 'sadasdas',
+  email: 'ahmed4@elmasrimedia.com',
+  website: 'https://sdassad.com',
+  imageUrl: '/uploads/image-1752329116573-468826460.png',
+  galleryUrls: [ '/uploads/image-1752329117173-715156683.jpg' ],
+  stars: 3,
+  amenities: undefined,
+  checkInTime: '14:00',
+  checkOutTime: '11:00',
+  longitude: 2321321,
+  latitude: 2321321,
+  featured: false,
+  rating: null,
+  guestRating: null,
+  basePrice: null,
+  currency: 'EGP',
+  parkingAvailable: false,
+  airportTransferAvailable: true,
+  carRentalAvailable: false,
+  shuttleAvailable: false,
+  wifiAvailable: true,
+  petFriendly: false,
+  accessibleFacilities: false,
+  status: 'active',
+  verificationStatus: 'pending',
+  createdBy: 1,
+  restaurants: [
+    {
+      name: 'asdsadsa',
+      cuisineType: 'asdasdas',
+      breakfastOptions: [Array]
+    }
+  ],
+  landmarks: [
+    {
+      name: 'Great Pyramid of Giza',
+      description: 'Ancient Egyptian pyramid',
+      distance: '1.2 km',
+      placeId: 'ChIJN8F_47w7WBQRUJGUzM6Fsks'
+    }
+  ],
+  faqs: [ { question: 'asdsad', answer: 'asdasd' } ],
+  roomTypes: [
+    {
+      name: 'asdsad',
+      description: '',
+      type: 'Junior Suite',
+      maxOccupancy: 2,
+      maxAdults: 2,
+      maxChildren: 0,
+      maxInfants: 0,
+      price: 2332,
+      size: '2323',
+      bedType: 'Twin Beds',
+      view: 'River View',
+      amenities: [Array],
+      available: true
+    }
+  ],
+  features: [ { name: 'meal', icon: 'hamburger' } ]
+}
+Validated hotel data: {
+  name: 'asdasdasda',
+  description: 'sadasdsa',
+  shortDescription: undefined,
+  destinationId: 1,
+  countryId: 1,
+  cityId: 1,
+  categoryId: null,
+  address: 'dasdlasdka;lsa;dslf',
+  city: 'Cairo',
+  country: 'Egypt',
+  postalCode: '12121',
+  phone: 'sadasdas',
+  email: 'ahmed4@elmasrimedia.com',
+  website: 'https://sdassad.com',
+  imageUrl: '/uploads/image-1752329116573-468826460.png',
+  galleryUrls: [ '/uploads/image-1752329117173-715156683.jpg' ],
+  stars: 3,
+  basePrice: null,
+  currency: 'EGP',
+  amenities: undefined,
+  checkInTime: '14:00',
+  checkOutTime: '11:00',
+  longitude: 2321321,
+  latitude: 2321321,
+  featured: false,
+  rating: null,
+  guestRating: null,
+  status: 'active',
+  verificationStatus: 'pending',
+  parkingAvailable: false,
+  airportTransferAvailable: true,
+  carRentalAvailable: false,
+  shuttleAvailable: false,
+  wifiAvailable: true,
+  petFriendly: false,
+  accessibleFacilities: false,
+  createdBy: 1,
+  restaurants: [
+    {
+      name: 'asdsadsa',
+      cuisineType: 'asdasdas',
+      breakfastOptions: [Array]
+    }
+  ],
+  landmarks: [
+    {
+      name: 'Great Pyramid of Giza',
+      description: 'Ancient Egyptian pyramid',
+      distance: '1.2 km',
+      placeId: 'ChIJN8F_47w7WBQRUJGUzM6Fsks'
+    }
+  ],
+  faqs: [ { question: 'asdsad', answer: 'asdasd' } ],
+  roomTypes: [
+    {
+      name: 'asdsad',
+      description: '',
+      type: 'Junior Suite',
+      maxOccupancy: 2,
+      maxAdults: 2,
+      maxChildren: 0,
+      maxInfants: 0,
+      price: 2332,
+      size: '2323',
+      bedType: 'Twin Beds',
+      view: 'River View',
+      amenities: [Array],
+      available: true
+    }
+  ],
+  features: [ { name: 'meal', icon: 'hamburger' } ]
+}
+=== CALLING STORAGE.CREATEHOTEL ===
+Features being passed to storage: [
+  {
+    "name": "meal",
+    "icon": "hamburger"
+  }
+]
+Storage createHotel called with data: asdasdasda
+Hotel features: 1 items
+Processed features ready for insertion: 1 items
+Database error in createHotel: error: column "service_charge_included" of relation "hotels" does not exist
+    at /home/runner/workspace/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async <anonymous> (/home/runner/workspace/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.createHotel (/home/runner/workspace/server/storage.ts:615:25)
+    at async <anonymous> (/home/runner/workspace/server/routes.ts:3411:24) {
+  length: 143,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '635',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1065',
+  routine: 'checkInsertTargets'
+}
+Hotel data that caused error: {
+  name: 'asdasdasda',
+  description: 'sadasdsa',
+  shortDescription: undefined,
+  destinationId: 1,
+  countryId: 1,
+  cityId: 1,
+  categoryId: null,
+  address: 'dasdlasdka;lsa;dslf',
+  city: 'Cairo',
+  country: 'Egypt',
+  postalCode: '12121',
+  phone: 'sadasdas',
+  email: 'ahmed4@elmasrimedia.com',
+  website: 'https://sdassad.com',
+  imageUrl: '/uploads/image-1752329116573-468826460.png',
+  galleryUrls: [ '/uploads/image-1752329117173-715156683.jpg' ],
+  stars: 3,
+  basePrice: null,
+  currency: 'EGP',
+  amenities: undefined,
+  checkInTime: '14:00',
+  checkOutTime: '11:00',
+  longitude: 2321321,
+  latitude: 2321321,
+  featured: false,
+  rating: null,
+  guestRating: null,
+  status: 'active',
+  verificationStatus: 'pending',
+  parkingAvailable: false,
+  airportTransferAvailable: true,
+  carRentalAvailable: false,
+  shuttleAvailable: false,
+  wifiAvailable: true,
+  petFriendly: false,
+  accessibleFacilities: false,
+  createdBy: 1,
+  restaurants: [
+    {
+      name: 'asdsadsa',
+      cuisineType: 'asdasdas',
+      breakfastOptions: [Array]
+    }
+  ],
+  landmarks: [
+    {
+      name: 'Great Pyramid of Giza',
+      description: 'Ancient Egyptian pyramid',
+      distance: '1.2 km',
+      placeId: 'ChIJN8F_47w7WBQRUJGUzM6Fsks'
+    }
+  ],
+  faqs: [ { question: 'asdsad', answer: 'asdasd' } ],
+  roomTypes: [
+    {
+      name: 'asdsad',
+      description: '',
+      type: 'Junior Suite',
+      maxOccupancy: 2,
+      maxAdults: 2,
+      maxChildren: 0,
+      maxInfants: 0,
+      price: 2332,
+      size: '2323',
+      bedType: 'Twin Beds',
+      view: 'River View',
+      amenities: [Array],
+      available: true
+    }
+  ],
+  features: [ { name: 'meal', icon: 'hamburger' } ]
+}
+Error creating hotel - Full error: error: column "service_charge_included" of relation "hotels" does not exist
+    at /home/runner/workspace/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async <anonymous> (/home/runner/workspace/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.createHotel (/home/runner/workspace/server/storage.ts:615:25)
+    at async <anonymous> (/home/runner/workspace/server/routes.ts:3411:24) {
+  length: 143,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '635',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1065',
+  routine: 'checkInsertTargets'
+}
+Error stack: error: column "service_charge_included" of relation "hotels" does not exist
+    at /home/runner/workspace/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async <anonymous> (/home/runner/workspace/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.createHotel (/home/runner/workspace/server/storage.ts:615:25)
+    at async <anonymous> (/home/runner/workspace/server/routes.ts:3411:24)
+Error type: object
+Error constructor: DatabaseError
