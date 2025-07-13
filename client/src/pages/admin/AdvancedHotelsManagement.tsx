@@ -162,19 +162,10 @@ export default function AdvancedHotelsManagement() {
   const {
     data: destinations = [],
     isLoading: isLoadingDestinations,
-    error: destinationsError,
   } = useQuery({
     queryKey: ["/api/admin/destinations"],
     queryFn: getQueryFn(),
   });
-
-  // Debug destinations and hotels matching
-  React.useEffect(() => {
-    if (destinations.length > 0 && hotels.length > 0) {
-      console.log('Destinations:', destinations);
-      console.log('Hotels with destinationIds:', hotels.map(h => ({ id: h.id, name: h.name, destinationId: h.destinationId, destinationIdType: typeof h.destinationId })));
-    }
-  }, [destinations, hotels]);
 
   // Fetch hotel categories for dropdowns (if needed later)
   const {
@@ -905,14 +896,14 @@ export default function AdvancedHotelsManagement() {
                           </div>
                         </TableCell>
                         <TableCell>
-                          {destinations.find((d: any) => d.id === Number(hotel.destinationId))?.name || 
-                           destinations.find((d: any) => d.id === hotel.destinationId)?.name || 'Unknown'}
+                          {destinations.find((d: any) => d.id === hotel.destinationId)?.name || 'Unknown'}
                         </TableCell>
                         <TableCell>
-                          {hotel.stars ? (
-                            <div className="flex items-center">
-                              {renderStarRating(hotel.stars)}
-                            </div>
+                          {hotel.rating ? (
+                            <span className="flex items-center gap-1">
+                              {hotel.rating.toFixed(1)}
+                              <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" />
+                            </span>
                           ) : (
                             'Not rated'
                           )}

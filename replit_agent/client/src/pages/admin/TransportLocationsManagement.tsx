@@ -12,10 +12,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Plus, Loader2 } from "lucide-react";
 import { apiRequest } from "@/lib/queryClient";
-import { toast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 
 type TransportLocation = {
   id: number;
@@ -74,6 +74,7 @@ const transportLocationSchema = z.object({
 });
 
 export default function TransportLocationsManagement() {
+  const { toast } = useToast();
   const queryClient = useQueryClient();
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -131,6 +132,7 @@ export default function TransportLocationsManagement() {
     },
     onSuccess: () => {
       toast({
+        variant: "success",
         title: "Success",
         description: "Transport location created successfully",
       });
@@ -140,9 +142,9 @@ export default function TransportLocationsManagement() {
     },
     onError: (error) => {
       toast({
+        variant: "destructive",
         title: "Error",
         description: error.message || "Failed to create transport location",
-        variant: "destructive",
       });
     },
   });
